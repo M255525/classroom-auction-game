@@ -4,7 +4,7 @@ import sys, io, os, json
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', line_buffering=True)
 from playwright.sync_api import sync_playwright
 OUT = sys.argv[1]; os.makedirs(OUT, exist_ok=True)
-BASE = 'http://127.0.0.1:8879/'
+BASE = os.environ.get('AUC_BASE', 'http://127.0.0.1:8879/')
 errs, fails = [], []
 def check(c, msg):
     print(('ok   ' if c else 'FAIL ') + msg)

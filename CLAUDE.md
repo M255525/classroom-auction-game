@@ -5,7 +5,7 @@
 2026-11-14 建立。使用者從「跨距大的工具方向」清單選了 #11「全班即時拍賣」。
 
 - 純靜態：`index.html`（CSS，酒紅絨布＋象牙卡片＋金色的拍賣行風格）＋`data.js`（拍品、組合、引擎、轉播站訊息編解碼；node 可 require）＋`app.js`（老師端 `T`、學生端 `S`、連線 `NET`）＋`watermark.js`（列印浮水印，從開店模擬複製）＋`manual.html`＋PWA。
-- 本機預覽 port **8879**（`.claude/launch.json` 的 `classroom-auction-game`）。visitor-badge `m255525.classroomauctiongame`。線上網址預定 <https://m255525.github.io/classroom-auction-game/>（寫死在 `app.js` 的 `ONLINE`，QR code 在非 github.io 網址時一律指向它）。**尚未上線**：repo 要由使用者自己 `gh repo create`，上線前先問過（實驗性新工具）。
+- 本機預覽 port **8879**（`.claude/launch.json` 的 `classroom-auction-game`）。visitor-badge `m255525.classroomauctiongame`。線上網址預定 <https://m255525.github.io/classroom-auction-game/>（寫死在 `app.js` 的 `ONLINE`，QR code 在非 github.io 網址時一律指向它）。**2026-11-14 已上線**（repo 由使用者自己 `gh repo create`；先 push 後才開 Pages，`build_type=workflow`，分支規則已是 master，第一次部署直接成功）。程式牆在 `REPO_META`（不在 LOCAL_APPS），github-dashboard 已補。
 
 ## 引擎（data.js）
 - 金額單位一律「萬元」。`RES` 每張：`lo/hi`（公開估值）、`bias`（真實價值大概落在區間哪裡，不公開）、`vol`（波動）。網紅合作 `bias .3 vol 1`、電視置入、獨家配方、加盟授權是刻意設計的「贏家詛咒」拍品。
@@ -32,7 +32,7 @@
 - 測試掛鉤 `window._cab`（G、T、S、NET、ACT）。
 
 ## 驗證
-- `python tools/e2e_auction.py <截圖資料夾>`（需先開 8879；連**正式轉播站**的隨機 BID 房間）：老師＋3 支 375px 學生手機（各自獨立 context）：選組、公開喊價（領先不能加、現場代按指定金額、太低被擋、倒數落槌）、密封與修改出價、老師重新整理後出價保留、次高價、荷蘭式、結算後學生手機算出的企業價值與老師一致、375px 無橫向溢出、再玩一場保留代碼與組別、關閉教室 4004。2026-11-14 連跑 4 輪全過、無 console 錯誤。
+- `python tools/e2e_auction.py <截圖資料夾>`（需先開 8879；連**正式轉播站**的隨機 BID 房間）：老師＋3 支 375px 學生手機（各自獨立 context）：選組、公開喊價（領先不能加、現場代按指定金額、太低被擋、倒數落槌）、密封與修改出價、老師重新整理後出價保留、次高價、荷蘭式、結算後學生手機算出的企業價值與老師一致、375px 無橫向溢出、再玩一場保留代碼與組別、關閉教室 4004。2026-11-14 本機連跑 4 輪全過、無 console 錯誤；上線後設 `AUC_BASE=https://m255525.github.io/classroom-auction-game/` 對線上版再跑一輪全過。
 - **真手機掃 QR、投影機、30 人以上同時出價未實測**。
 
 ## 標準配備
