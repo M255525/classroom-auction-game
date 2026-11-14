@@ -1,0 +1,16 @@
+{
+  "name": "創業資源大競標：全班即時拍賣",
+  "short_name": "創業大競標",
+  "description": "全班分組用手機競標創業資源，四種拍賣形式，體會稀缺、機會成本與贏家詛咒",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#2C0915",
+  "theme_color": "#3B0D1C",
+  "lang": "zh-TW",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
